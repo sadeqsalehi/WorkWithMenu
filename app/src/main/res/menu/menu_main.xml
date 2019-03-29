@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mnuFirst"
+        android:title="First Item" />
+    <item
+        android:id="@+id/mnuSecond"
+        android:title="Second Item" />
+    <item android:title="Third Item">
+        <menu xmlns:android="http://schemas.android.com/apk/res/android">
+            <item
+                android:id="@+id/mnuFirstSub"
+                android:title="First  Sub Item" />
+            <item
+                android:id="@+id/mnuSecondSub"
+                android:title="Second  Sub Item" />
+        </menu>
+
+    </item>
+
+
+</menu>
