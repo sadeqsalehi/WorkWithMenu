@@ -17,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
         //options menu
         // 1 - Programmatically
         // 2 - Resource menu file
-
     }
 
     @Override
@@ -28,11 +27,19 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    //First method to handle the Click Event
+ /*
     public void onMenuClick(MenuItem item) {
-
+      Toast.makeText(this, (String.format("%s Clicked", item.getTitle())), Toast.LENGTH_SHORT).show();
+    }
+  */
+    //Second method to handle the Click Event
+//در این روش دیگر نیازی به نوشتن دستور در فایل xml ندارد و مستقیما این متد را می نویسیم
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.mnuSearch:
-                tvMessage.setText("Search Item Clicked");
+                tvMessage.setText("Saearch Item Clicked");
                 break;
             case R.id.mnuFirst:
                 tvMessage.setText("First Item Clicked");
@@ -46,9 +53,9 @@ public class MainActivity extends AppCompatActivity {
             case R.id.mnuSecondSub:
                 tvMessage.setText("Second Sub Item Clicked");
                 break;
-
             default:
                 break;
         }
+        return super.onOptionsItemSelected(item);
     }
 }

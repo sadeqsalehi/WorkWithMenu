@@ -1,33 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- برای استفاده از روش اول که البته توصیه نمی شود خط بعد را بایستی به ازای هر ایتم اصافه نمود -->
+    <!-- android:onClick="onMenuClick" -->
     <item
         android:id="@+id/mnuSearch"
         android:icon="@android:drawable/ic_menu_search"
-        android:onClick="onMenuClick"
         android:title="Search"
         app:showAsAction="always" />
     <item
         android:id="@+id/mnuFirst"
-        android:onClick="onMenuClick"
         android:title="First Item" />
     <item
         android:id="@+id/mnuSecond"
-        android:onClick="onMenuClick"
         android:title="Second Item" />
     <item android:title="Third Item">
         <menu xmlns:android="http://schemas.android.com/apk/res/android">
             <item
                 android:id="@+id/mnuFirstSub"
-                android:onClick="onMenuClick"
-                android:title="First  Sub Item" />
+                android:title="First Sub Item" />
             <item
                 android:id="@+id/mnuSecondSub"
-                android:onClick="onMenuClick"
-                android:title="Second  Sub Item" />
+                android:title="Second Sub Item" />
         </menu>
 
     </item>
-
-
 </menu>
