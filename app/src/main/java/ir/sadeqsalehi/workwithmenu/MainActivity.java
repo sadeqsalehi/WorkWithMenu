@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.SubMenu;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,9 +22,28 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        //روش اول
         /*MenuInflater menuInflater = new MenuInflater(getApplicationContext());
         menuInflater.inflate(R.menu.menu_main,menu); */
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        //روش دوم
+        /* getMenuInflater().inflate(R.menu.menu_main, menu);*/
+        //روش سوم
+        //در این روش بدون استفاده از فایل xml قابلیت ایجاد منو وجود دارد
+        MenuItem searchItem = menu.add("Search");
+        searchItem.setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
+        searchItem.setIcon(android.R.drawable.ic_menu_search);
+        searchItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                tvMessage.setText("Search Item Clicked");
+                return false;
+            }
+        });
+        menu.add("Option 1");
+        menu.add("Option 2");
+        SubMenu subMenu = menu.addSubMenu("Options 3");
+        subMenu.add("Option 3 Sub 1");
+        subMenu.add("Option 3 Sub 2");
         return super.onCreateOptionsMenu(menu);
     }
 
